@@ -1,0 +1,21 @@
+Roll-Number
+1. 203050014 (Name-Pranjal Saini)
+2. 203050043 (Name-Harsh Peswani)
+
+Why our implementation is better (mm2.c)
+
+In this implementation we have used balanced binary search tree(AVL) tree to maintain free list and allocated list
+so that insertion deletion and searching takes O(logn) time,we have used worst-fit and two-sided coalescing strategy
+we have used worst-fit so that there will be small number of holes and less external fragmentation and coalescing will
+merge adjacent block thus increasing block size. 
+ 
+If there is no free block of required size during allocation and if there is a free block right before break point(mem_sbrk(0))
+so we will use that free block and call mem_sbrk for remaining amount of memory so this save us from requesting more memory
+from mem_sbrk.
+  
+In realloc if there is request to increase the size so if the free block is available right next to the previously allocated
+block we have used that free block to optimise utilazation 
+
+References-
+https://www.geeksforgeeks.org/doubly-linked-list/
+https://www.programiz.com/dsa/avl-tree
